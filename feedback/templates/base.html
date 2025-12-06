@@ -1,0 +1,26 @@
+{% load static %}
+<DOSTYPE html!>
+<html>
+    <head>
+        <meta cgaracter="utf-8">
+        <title>Feedback App</title>
+        <link rel="stylesheet" href="{% static 'base.css' %}">
+        {% block page_title %}
+            Default Page
+        {% endblock page_title %}
+        {% block css_file %}
+        {% endblock css_file %}
+    </head>
+    <body>
+        <header>
+            <h1>Welcome to the Feedback App</h1>
+        </header>
+        <main>
+            {% block content %}
+            {% endblock %}
+        </main>
+        <footer>
+            <p>&copy; 2025 Feedback App</p>
+        </footer>
+    </body>
+</html>

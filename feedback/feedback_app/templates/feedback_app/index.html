@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+{% block page_title %}
+    <title> Feedback Form </title>
+{% endblock page_title %}
+
+{% block css_file %}
+    <link rel="stylesheet" href="{% static 'feedback_app/index.css' %}">
+{% endblock css_file %} 
+
+{% block content %}
+{% comment %} {% include "includes/header.html" %} {% endcomment %}
+
+    <form action="/" method="POST">
+        {% csrf_token %}
+        {% comment %} {{ form}} {% endcomment %}
+        {% for field in form %}
+            <div>
+                {{field.label}}
+                {{field}}
+            </div>
+        {% endfor %}
+        <button type="submit">Submit</button>
+    </form>
+    
+{% endblock %}
